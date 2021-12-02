@@ -1,0 +1,5 @@
+name: quarkus-logging-sentry
+title: Quarkus Logging Sentry
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
