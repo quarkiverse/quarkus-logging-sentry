@@ -8,7 +8,7 @@
     </parent>
     <groupId>io.quarkiverse.loggingsentry</groupId>
     <artifactId>quarkus-logging-sentry-parent</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
     <name>Quarkus - Logging - Sentry - Parent</name>
     <modules>
@@ -59,4 +59,8 @@
             </plugins>
         </pluginManagement>
     </build>
+
+  <scm>
+    <tag>1.0.2</tag>
+  </scm>
 </project>
