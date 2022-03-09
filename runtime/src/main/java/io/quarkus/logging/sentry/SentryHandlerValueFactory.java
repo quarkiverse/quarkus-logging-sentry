@@ -55,6 +55,7 @@ public class SentryHandlerValueFactory {
         sentryConfig.environment.ifPresent(options::setEnvironment);
         sentryConfig.release.ifPresent(options::setRelease);
         sentryConfig.serverName.ifPresent(options::setServerName);
+        sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
         options.setDebug(sentryConfig.debug);
         return options;
     }
