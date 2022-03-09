@@ -2,6 +2,7 @@ package io.quarkus.logging.sentry;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.logging.Level;
 
 import io.quarkus.runtime.annotations.ConfigItem;
@@ -109,4 +110,13 @@ public class SentryConfig {
      */
     @ConfigItem(defaultValue = "false")
     public boolean debug;
+
+    /**
+     * This should be a float/double between 0.0 and 1.0 (inclusive) and represents the percentage chance that any given
+     * transaction will be sent to Sentry.
+     * So, barring outside influence, 0.0 is a 0% chance (none will be sent) and 1.0 is a 100% chance (all will be sent). This
+     * rate applies equally to all transactions.
+     */
+    @ConfigItem
+    public OptionalDouble tracesSampleRate;
 }
