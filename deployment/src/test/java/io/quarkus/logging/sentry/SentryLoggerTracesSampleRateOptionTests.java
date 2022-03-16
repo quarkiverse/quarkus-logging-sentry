@@ -1,15 +1,16 @@
 package io.quarkus.logging.sentry;
 
-import io.quarkus.test.QuarkusUnitTest;
-import io.sentry.HubAdapter;
-import io.sentry.SentryOptions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.RegisterExtension;
+import static io.quarkus.logging.sentry.SentryLoggerTest.getSentryHandler;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.logging.Handler;
 
-import static io.quarkus.logging.sentry.SentryLoggerTest.getSentryHandler;
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+
+import io.quarkus.test.QuarkusUnitTest;
+import io.sentry.HubAdapter;
+import io.sentry.SentryOptions;
 
 public class SentryLoggerTracesSampleRateOptionTests {
 
