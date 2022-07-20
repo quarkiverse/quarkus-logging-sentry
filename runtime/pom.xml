@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse.loggingsentry</groupId>
         <artifactId>quarkus-logging-sentry-parent</artifactId>
-        <version>1.2.1</version>
+        <version>999-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-logging-sentry</artifactId>
     <name>Quarkus - Logging - Sentry - Runtime</name>
