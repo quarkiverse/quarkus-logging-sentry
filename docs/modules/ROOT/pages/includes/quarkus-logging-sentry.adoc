@@ -1,3 +1,5 @@
+
+:summaryTableId: quarkus-logging-sentry
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -8,11 +10,13 @@ h|[[quarkus-logging-sentry_configuration]]link:#quarkus-logging-sentry_configura
 h|Type
 h|Default
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry]]`link:#quarkus-logging-sentry_quarkus.log.sentry[quarkus.log.sentry]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.enable]]`link:#quarkus-logging-sentry_quarkus.log.sentry.enable[quarkus.log.sentry.enable]`
 
 [.description]
 --
 Determine whether to enable the Sentry logging extension.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_ENABLE+++`
 --|boolean 
 |`false`
 
@@ -22,6 +26,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.dsn]]`link:#quarkus-logging-sentr
 [.description]
 --
 Sentry DSN The DSN is the first and most important thing to configure because it tells the SDK where to send events. You can find your project’s DSN in the “Client Keys” section of your “Project Settings” in Sentry.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_DSN+++`
 --|string 
 |
 
@@ -31,6 +37,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.level]]`link:#quarkus-logging-sen
 [.description]
 --
 The sentry log level.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_LEVEL+++`
 --|link:https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html[Level]
  
 |`WARN`
@@ -41,6 +49,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.minimum-event-level]]`link:#quark
 [.description]
 --
 The minimum event level. Every log statement that is greater than minimum event level is turned into Sentry event.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_MINIMUM_EVENT_LEVEL+++`
 --|link:https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html[Level]
  
 |`WARN`
@@ -51,6 +61,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.minimum-breadcrumb-level]]`link:#
 [.description]
 --
 The minimum breadcrumb level. Every log statement that is greater than minimum breadcrumb level is added to Sentry scope as a breadcrumb, which can be later attached to SentryEvent if one is triggered.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_MINIMUM_BREADCRUMB_LEVEL+++`
 --|link:https://docs.jboss.org/jbossas/javadoc/7.1.2.Final/org/jboss/logmanager/Level.html[Level]
  
 |`INFO`
@@ -61,6 +73,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.in-app-packages]]`link:#quarkus-l
 [.description]
 --
 Sentry differentiates stack frames that are directly related to your application (“in application”) from stack frames that come from other packages such as the standard library, frameworks, or other dependencies. The difference is visible in the Sentry web interface where only the “in application” frames are displayed by default. You can configure which package prefixes your application uses with this option. This option is highly recommended as it affects stacktrace grouping and display on Sentry. See documentation: https://quarkus.io/guides/logging-sentry++#++in-app-packages
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_IN_APP_PACKAGES+++`
 --|list of string 
 |
 
@@ -70,6 +84,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.environment]]`link:#quarkus-loggi
 [.description]
 --
 Environment With Sentry you can easily filter issues, releases, and user feedback by environment. The environment filter on sentry affects all issue-related metrics like count of users affected, times series graphs, and event count. By setting the environment option, an environment tag will be added to each new issue sent to Sentry. There are a few restrictions: -> the environment name cannot contain newlines or spaces, cannot be the string “None” or exceed 64 characters.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_ENVIRONMENT+++`
 --|string 
 |
 
@@ -79,6 +95,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.release]]`link:#quarkus-logging-s
 [.description]
 --
 Release A release is a version of your code that is deployed to an environment. When you give Sentry information about your releases, you unlock a number of new features: - Determine the issues and regressions introduced in a new release - Predict which commit caused an issue and who is likely responsible - Resolve issues by including the issue number in your commit message - Receive email notifications when your code gets deployed
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_RELEASE+++`
 --|string 
 |
 
@@ -88,6 +106,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.server-name]]`link:#quarkus-loggi
 [.description]
 --
 Server name Sets the server name that will be sent with each event.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_SERVER_NAME+++`
 --|string 
 |
 
@@ -97,6 +117,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.debug]]`link:#quarkus-logging-sen
 [.description]
 --
 Debug Enables Sentry debug mode.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_DEBUG+++`
 --|boolean 
 |`false`
 
@@ -106,6 +128,8 @@ a| [[quarkus-logging-sentry_quarkus.log.sentry.traces-sample-rate]]`link:#quarku
 [.description]
 --
 This should be a float/double between 0.0 and 1.0 (inclusive) and represents the percentage chance that any given transaction will be sent to Sentry. So, barring outside influence, 0.0 is a 0% chance (none will be sent) and 1.0 is a 100% chance (all will be sent). This rate applies equally to all transactions.
+
+Environment variable: `+++QUARKUS_LOG_SENTRY_TRACES_SAMPLE_RATE+++`
 --|double 
 |
 

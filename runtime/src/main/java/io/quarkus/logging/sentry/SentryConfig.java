@@ -18,7 +18,7 @@ public class SentryConfig {
     /**
      * Determine whether to enable the Sentry logging extension.
      */
-    @ConfigItem(name = ConfigItem.PARENT)
+    @ConfigItem(defaultValue = "false")
     boolean enable;
 
     /**
