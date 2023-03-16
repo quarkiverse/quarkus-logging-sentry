@@ -1,4 +1,4 @@
-:quarkus-version: 2.16.4.Final
+:quarkus-version: 3.0.0.Alpha6
 :quarkus-logging-sentry-version: 1.2.2
 
 :quarkus-org-url: https://github.com/quarkusio
