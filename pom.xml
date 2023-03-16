@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.quarkiverse</groupId>
         <artifactId>quarkiverse-parent</artifactId>
-        <version>10</version>
+        <version>12</version>
     </parent>
     <groupId>io.quarkiverse.loggingsentry</groupId>
     <artifactId>quarkus-logging-sentry-parent</artifactId>
@@ -24,10 +24,10 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.version>2.12.0.Final</quarkus.version>
+        <quarkus.version>2.16.4.Final</quarkus.version>
 
-        <sentry.version>6.4.1</sentry.version>
-        <assertj.version>3.23.1</assertj.version>
+        <sentry.version>6.15.0</sentry.version>
+        <assertj.version>3.24.2</assertj.version>
     </properties>
     <dependencyManagement>
         <dependencies>
