@@ -1,5 +1,5 @@
 :quarkus-version: 3.0.0.Alpha6
-:quarkus-logging-sentry-version: 1.2.2
+:quarkus-logging-sentry-version: 2.0.0
 
 :quarkus-org-url: https://github.com/quarkusio
 :quarkus-base-url: {quarkus-org-url}/quarkus
