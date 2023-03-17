@@ -119,4 +119,35 @@ public class SentryConfig {
      */
     @ConfigItem
     public OptionalDouble tracesSampleRate;
+
+    /**
+     * When set to {@code true}, a proxy can be configured that should be used for outbound requests. This is also
+     * used for HTTPS requests.
+     */
+    @ConfigItem(defaultValue = "false")
+    public boolean proxyEnabled;
+
+    /**
+     * Sets the host name of the proxy server
+     */
+    @ConfigItem
+    public Optional<String> proxyHost;
+
+    /**
+     * Sets the port number of the proxy server
+     */
+    @ConfigItem
+    public Optional<Integer> proxyPort;
+
+    /**
+     * Sets the username to authenticate on the proxy server
+     */
+    @ConfigItem
+    public Optional<String> proxyUsername;
+
+    /**
+     * Sets the password to authenticate on the proxy server
+     */
+    @ConfigItem
+    public Optional<String> proxyPassword;
 }

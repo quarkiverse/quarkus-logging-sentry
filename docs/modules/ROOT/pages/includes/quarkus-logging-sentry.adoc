@@ -188,4 +188,84 @@ endif::add-copy-button-to-env-var[]
 --|double 
 |
 
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-enabled]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-enabled[quarkus.log.sentry.proxy-enabled]`
+
+[.description]
+--
+When set to `true`, a proxy can be configured that should be used for outbound requests. This is also used for HTTPS requests.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++`
+endif::add-copy-button-to-env-var[]
+--|boolean 
+|`false`
+
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-host]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-host[quarkus.log.sentry.proxy-host]`
+
+[.description]
+--
+Sets the host name of the proxy server
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_HOST+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_HOST+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|
+
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-port]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-port[quarkus.log.sentry.proxy-port]`
+
+[.description]
+--
+Sets the port number of the proxy server
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_PORT+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_PORT+++`
+endif::add-copy-button-to-env-var[]
+--|int 
+|
+
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-username]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-username[quarkus.log.sentry.proxy-username]`
+
+[.description]
+--
+Sets the username to authenticate on the proxy server
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_USERNAME+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_USERNAME+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|
+
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-password]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-password[quarkus.log.sentry.proxy-password]`
+
+[.description]
+--
+Sets the password to authenticate on the proxy server
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_PASSWORD+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_PASSWORD+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|
+
 |===
