@@ -59,14 +59,14 @@ public class SentryHandlerValueFactory {
         sentryConfig.serverName.ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
 
-        if (sentryConfig.proxyEnabled) {
-            if (sentryConfig.proxyHost.filter(not(String::isBlank)).isPresent()) {
+        if (sentryConfig.proxy.enable) {
+            if (sentryConfig.proxy.host.filter(not(String::isBlank)).isPresent()) {
                 LOG.trace("Proxy is enabled for Sentry's outgoing requests");
                 options.setProxy(new SentryOptions.Proxy(
-                        sentryConfig.proxyHost.get(),
-                        sentryConfig.proxyPort.map(String::valueOf).orElse(null),
-                        sentryConfig.proxyUsername.orElse(null),
-                        sentryConfig.proxyPassword.orElse(null)));
+                        sentryConfig.proxy.host.get(),
+                        sentryConfig.proxy.port.map(String::valueOf).orElse(null),
+                        sentryConfig.proxy.username.orElse(null),
+                        sentryConfig.proxy.password.orElse(null)));
             } else {
                 LOG.warn("Proxy is enabled for Sentry but no host is provided. Ignoring Proxy configuration.");
             }

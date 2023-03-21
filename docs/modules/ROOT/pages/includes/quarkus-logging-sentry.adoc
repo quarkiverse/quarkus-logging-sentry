@@ -189,27 +189,27 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-enabled]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-enabled[quarkus.log.sentry.proxy-enabled]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy[quarkus.log.sentry.proxy]`
 
 [.description]
 --
-When set to `true`, a proxy can be configured that should be used for outbound requests. This is also used for HTTPS requests.
+Determine whether to enable a Proxy for all Sentry outbound requests. This is also used for HTTPS requests.
 
 ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY+++[]
 endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++`
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY+++`
 endif::add-copy-button-to-env-var[]
 --|boolean 
 |`false`
 
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-host]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-host[quarkus.log.sentry.proxy-host]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy.host]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy.host[quarkus.log.sentry.proxy.host]`
 
 [.description]
 --
-Sets the host name of the proxy server
+Sets the host name of the proxy server.
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_HOST+++[]
@@ -221,7 +221,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-port]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-port[quarkus.log.sentry.proxy-port]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy.port]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy.port[quarkus.log.sentry.proxy.port]`
 
 [.description]
 --
@@ -237,7 +237,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-username]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-username[quarkus.log.sentry.proxy-username]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy.username]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy.username[quarkus.log.sentry.proxy.username]`
 
 [.description]
 --
@@ -253,7 +253,7 @@ endif::add-copy-button-to-env-var[]
 |
 
 
-a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy-password]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy-password[quarkus.log.sentry.proxy-password]`
+a| [[quarkus-logging-sentry_quarkus.log.sentry.proxy.password]]`link:#quarkus-logging-sentry_quarkus.log.sentry.proxy.password[quarkus.log.sentry.proxy.password]`
 
 [.description]
 --
