@@ -117,6 +117,8 @@ public class SentryConfig {
      * So, barring outside influence, 0.0 is a 0% chance (none will be sent) and 1.0 is a 100% chance (all will be sent). This
      * rate applies equally to all transactions.
      */
-    @ConfigItem
+    @ConfigItem()
     public OptionalDouble tracesSampleRate;
+
+    public SentryProxyConfig proxy;
 }

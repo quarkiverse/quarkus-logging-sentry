@@ -1,5 +1,7 @@
 package io.quarkus.logging.sentry;
 
+import static java.util.function.Predicate.not;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -56,6 +58,20 @@ public class SentryHandlerValueFactory {
         sentryConfig.release.ifPresent(options::setRelease);
         sentryConfig.serverName.ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
+
+        if (sentryConfig.proxy.enable) {
+            if (sentryConfig.proxy.host.filter(not(String::isBlank)).isPresent()) {
+                LOG.trace("Proxy is enabled for Sentry's outgoing requests");
+                options.setProxy(new SentryOptions.Proxy(
+                        sentryConfig.proxy.host.get(),
+                        sentryConfig.proxy.port.map(String::valueOf).orElse(null),
+                        sentryConfig.proxy.username.orElse(null),
+                        sentryConfig.proxy.password.orElse(null)));
+            } else {
+                LOG.warn("Proxy is enabled for Sentry but no host is provided. Ignoring Proxy configuration.");
+            }
+        }
+
         options.setDebug(sentryConfig.debug);
         return options;
     }
