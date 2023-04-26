@@ -1,5 +1,10 @@
 package io.quarkus.logging.sentry.deployment;
 
+import org.jboss.jandex.DotName;
+
+import io.quarkus.arc.deployment.BeanRegistrationPhaseBuildItem;
+import io.quarkus.arc.processor.BeanInfo;
+import io.quarkus.arc.processor.BuildExtension;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.annotations.ExecutionTime;
 import io.quarkus.deployment.annotations.Record;
@@ -7,14 +12,10 @@ import io.quarkus.deployment.builditem.ExtensionSslNativeSupportBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.LogHandlerBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
+import io.quarkus.logging.sentry.SentryBeforeSendCallbacksHandler;
 import io.quarkus.logging.sentry.SentryConfig;
 import io.quarkus.logging.sentry.SentryHandlerValueFactory;
-import io.sentry.Breadcrumb;
-import io.sentry.SentryBaseEvent;
-import io.sentry.SentryEvent;
-import io.sentry.SpanContext;
-import io.sentry.SpanId;
-import io.sentry.SpanStatus;
+import io.sentry.*;
 import io.sentry.protocol.App;
 import io.sentry.protocol.Browser;
 import io.sentry.protocol.Contexts;
@@ -51,8 +52,28 @@ class SentryProcessor {
     @BuildStep
     @Record(ExecutionTime.RUNTIME_INIT)
     LogHandlerBuildItem addSentryLogHandler(final SentryConfig sentryConfig,
-            final SentryHandlerValueFactory sentryHandlerValueFactory) {
-        return new LogHandlerBuildItem(sentryHandlerValueFactory.create(sentryConfig));
+            final SentryHandlerValueFactory sentryHandlerValueFactory,
+            final BeanRegistrationPhaseBuildItem beanRegistrationPhase) {
+
+        boolean hasBeforeSendCallbackBeans = discoverBeforeSendCallbackHandlers(beanRegistrationPhase);
+
+        SentryBeforeSendCallbacksHandler callbacksHandler = null;
+        if (hasBeforeSendCallbackBeans) {
+            callbacksHandler = new SentryBeforeSendCallbacksHandler();
+        }
+
+        return new LogHandlerBuildItem(sentryHandlerValueFactory.create(sentryConfig, callbacksHandler));
+    }
+
+    private static boolean discoverBeforeSendCallbackHandlers(BeanRegistrationPhaseBuildItem beanRegistrationPhase) {
+        boolean hasBeforeSendCallbackBeans = false;
+        for (BeanInfo beanInfo : beanRegistrationPhase.getContext().get(BuildExtension.Key.BEANS)) {
+            if (beanInfo.hasType(DotName.createSimple("io.sentry.SentryOptions$BeforeSendCallback"))) {
+                hasBeforeSendCallbackBeans = true;
+                break;
+            }
+        }
+        return hasBeforeSendCallbackBeans;
     }
 
     @BuildStep
@@ -92,6 +113,7 @@ class SentryProcessor {
                 SentryThread.class.getName(),
                 SentryTransaction.class.getName(),
                 SentrySpan.class.getName(),
+                SentryOptions.BeforeSendCallback.class.getName(),
                 User.class.getName());
     }
 }

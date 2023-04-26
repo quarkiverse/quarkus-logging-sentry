@@ -12,4 +12,10 @@ public class LoggingSentryResource {
     public String hello() {
         return "Hello logging-sentry";
     }
+
+    @GET
+    @Path("/broken")
+    public String nope() {
+        throw new RuntimeException("broken");
+    }
 }
