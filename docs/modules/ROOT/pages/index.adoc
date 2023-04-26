@@ -74,6 +74,24 @@ quarkus.log.sentry.level=ERROR
 quarkus.log.sentry.in-app-packages=org.example
 ----
 
+== BeforeSend callbacks
+
+Sentry events can be customised before transmission using Sentry's builtin `BeforeSendCallback` interface.
+Any application-scoped bean marked with the interface will be called. This can be used to add data to the event as well as completely suppressing the event.
+Make sure to mark beans as unremovable.
+
+[source, Java]
+----
+@ApplicationScoped
+@Unremovable
+public class SentryCallbackHandler implements SentryOptions.BeforeSendCallback {
+    @Override
+    public SentryEvent execute(SentryEvent sentryEvent, Hint hint) {
+        return sentryEvent; // event unchanged
+    }
+}
+----
+
 == Configuration Reference
 
 This extension is configured through the standard `application.properties` file.
