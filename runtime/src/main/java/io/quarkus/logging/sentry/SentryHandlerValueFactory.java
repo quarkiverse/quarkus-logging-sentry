@@ -81,7 +81,6 @@ public class SentryHandlerValueFactory {
             }
         }
 
-
         options.setDebug(sentryConfig.debug);
         return options;
     }
