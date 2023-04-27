@@ -62,10 +62,7 @@ public class SentryHandlerValueFactory {
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
 
         if (beforeSendCallbacksHandler != null) {
-            options.setBeforeSend((sentryEvent, hint) -> {
-                beforeSendCallbacksHandler.executeCallbacks(sentryEvent, hint);
-                return sentryEvent;
-            });
+            options.setBeforeSend((sentryEvent, hint) -> beforeSendCallbacksHandler.executeCallbacks(sentryEvent, hint));
         }
 
         if (sentryConfig.proxy.enable) {

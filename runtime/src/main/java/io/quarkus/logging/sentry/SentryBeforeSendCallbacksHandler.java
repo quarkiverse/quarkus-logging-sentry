@@ -10,8 +10,12 @@ import io.sentry.SentryOptions.BeforeSendCallback;
  * Executes beans marked with BeforeSend callback interface.
  */
 public class SentryBeforeSendCallbacksHandler {
-    public void executeCallbacks(SentryEvent sentryEvent, Hint hint) {
-        CDI.current().select(BeforeSendCallback.class)
-                .forEach(beforeSendCallback -> beforeSendCallback.execute(sentryEvent, hint));
+    public SentryEvent executeCallbacks(SentryEvent sentryEvent, Hint hint) {
+        if (sentryEvent != null) {
+            for (BeforeSendCallback callback : CDI.current().select(BeforeSendCallback.class)) {
+                sentryEvent = callback.execute(sentryEvent, hint);
+            }
+        }
+        return sentryEvent;
     }
 }
