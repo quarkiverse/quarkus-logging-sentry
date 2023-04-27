@@ -1,10 +1,7 @@
 package io.quarkiverse.loggingsentry.it;
 
 import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;
-
-import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +9,6 @@ import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 public class LoggingSentryResourceTest {
-    @Inject
-    SentryCallbackHandler sentryCallbackHandler;
-
     @Test
     public void testHelloEndpoint() {
         given()
@@ -26,11 +20,21 @@ public class LoggingSentryResourceTest {
 
     @Test
     public void testBeforeSendCallback() {
+        assertCallbackHandlerCallStatus(false);
+
         given()
                 .when().get("/logging-sentry/broken")
                 .then()
                 .statusCode(500);
 
-        assertThat(sentryCallbackHandler.wasCalledWithRuntimeException()).isTrue();
+        assertCallbackHandlerCallStatus(true);
+    }
+
+    private static void assertCallbackHandlerCallStatus(Boolean wasCalled) {
+        given()
+                .when().get("/logging-sentry/get-callback-handler-status")
+                .then()
+                .statusCode(200)
+                .body(is(wasCalled.toString()));
     }
 }
