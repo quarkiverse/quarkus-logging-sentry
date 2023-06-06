@@ -18,7 +18,7 @@
     <module>integration-tests</module>
   </modules>
   <scm>
-    <connection>:git:git@github.com:quarkiverse/quarkus-logging-sentry.git</connection>
+    <connection>scm:git:git@github.com:quarkiverse/quarkus-logging-sentry.git</connection>
     <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-logging-sentry.git</developerConnection>
     <url>https://github.com/quarkiverse/quarkus-logging-sentry</url>
   </scm>
