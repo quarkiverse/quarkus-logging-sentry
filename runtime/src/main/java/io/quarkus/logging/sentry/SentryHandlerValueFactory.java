@@ -20,14 +20,15 @@ import io.sentry.jul.SentryHandler;
 public class SentryHandlerValueFactory {
     private static final Logger LOG = Logger.getLogger(SentryHandlerValueFactory.class);
 
-    public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
+    public RuntimeValue<Optional<Handler>> create(final SentryConfig config,
+            final SentryBeforeSendCallbacksHandler beforeSendCallbacksHandler) {
 
         if (!config.enable) {
             return new RuntimeValue<>(Optional.empty());
         }
 
         // Init Sentry
-        final SentryOptions options = toSentryOptions(config);
+        final SentryOptions options = toSentryOptions(config, beforeSendCallbacksHandler);
         Sentry.init(options);
         SentryHandler handler = new SentryHandler(options);
         handler.setLevel(config.level);
@@ -37,7 +38,8 @@ public class SentryHandlerValueFactory {
         return new RuntimeValue<>(Optional.of(handler));
     }
 
-    public static SentryOptions toSentryOptions(SentryConfig sentryConfig) {
+    public static SentryOptions toSentryOptions(SentryConfig sentryConfig,
+            SentryBeforeSendCallbacksHandler beforeSendCallbacksHandler) {
         if (!sentryConfig.dsn.isPresent()) {
             throw new ConfigurationException(
                     "Configuration key \"quarkus.log.sentry.dsn\" is required when Sentry is enabled, but its value is empty/missing");
@@ -58,6 +60,10 @@ public class SentryHandlerValueFactory {
         sentryConfig.release.ifPresent(options::setRelease);
         sentryConfig.serverName.ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
+
+        if (beforeSendCallbacksHandler != null) {
+            options.setBeforeSend((sentryEvent, hint) -> beforeSendCallbacksHandler.executeCallbacks(sentryEvent, hint));
+        }
 
         if (sentryConfig.proxy.enable) {
             if (sentryConfig.proxy.host.filter(not(String::isBlank)).isPresent()) {
