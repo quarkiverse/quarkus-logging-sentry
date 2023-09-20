@@ -49,7 +49,7 @@ public class SentryHandlerValueFactory {
 
         if (!sentryConfig.inAppPackages.isPresent()) {
             LOG.warn(
-                    "No 'quarkus.sentry.in-app-packages' was configured, this option is highly recommended as it affects stacktrace grouping and display on Sentry. See https://quarkus.io/guides/logging-sentry#in-app-packages");
+                    "No 'quarkus.log.sentry.in-app-packages' was configured, this option is highly recommended as it affects stacktrace grouping and display on Sentry. See https://quarkus.io/guides/logging-sentry#in-app-packages");
         } else {
             List<String> inAppPackages = sentryConfig.inAppPackages.get();
             if (inAppPackages.size() != 1 || !Objects.equals(inAppPackages.get(0), "*")) {
