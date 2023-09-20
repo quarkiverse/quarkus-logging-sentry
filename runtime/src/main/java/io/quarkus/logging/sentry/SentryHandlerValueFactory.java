@@ -7,6 +7,9 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Handler;
 
+import jakarta.enterprise.inject.Instance;
+import jakarta.enterprise.inject.spi.CDI;
+
 import org.jboss.logging.Logger;
 
 import io.quarkus.runtime.RuntimeValue;
@@ -20,15 +23,14 @@ import io.sentry.jul.SentryHandler;
 public class SentryHandlerValueFactory {
     private static final Logger LOG = Logger.getLogger(SentryHandlerValueFactory.class);
 
-    public RuntimeValue<Optional<Handler>> create(final SentryConfig config,
-            final SentryBeforeSendCallbacksHandler beforeSendCallbacksHandler) {
+    public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
 
         if (!config.enable) {
             return new RuntimeValue<>(Optional.empty());
         }
 
         // Init Sentry
-        final SentryOptions options = toSentryOptions(config, beforeSendCallbacksHandler);
+        final SentryOptions options = toSentryOptions(config);
         Sentry.init(options);
         SentryHandler handler = new SentryHandler(options);
         handler.setLevel(config.level);
@@ -38,8 +40,7 @@ public class SentryHandlerValueFactory {
         return new RuntimeValue<>(Optional.of(handler));
     }
 
-    public static SentryOptions toSentryOptions(SentryConfig sentryConfig,
-            SentryBeforeSendCallbacksHandler beforeSendCallbacksHandler) {
+    public static SentryOptions toSentryOptions(SentryConfig sentryConfig) {
         if (!sentryConfig.dsn.isPresent()) {
             throw new ConfigurationException(
                     "Configuration key \"quarkus.log.sentry.dsn\" is required when Sentry is enabled, but its value is empty/missing");
@@ -61,8 +62,10 @@ public class SentryHandlerValueFactory {
         sentryConfig.serverName.ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
 
-        if (beforeSendCallbacksHandler != null) {
-            options.setBeforeSend((sentryEvent, hint) -> beforeSendCallbacksHandler.executeCallbacks(sentryEvent, hint));
+        final Instance<SentryOptions.BeforeSendCallback> select = CDI.current().select(SentryOptions.BeforeSendCallback.class);
+        if (!select.isUnsatisfied()) {
+            final SentryBeforeSendCallbacksHandler handler = new SentryBeforeSendCallbacksHandler(select);
+            options.setBeforeSend(handler::apply);
         }
 
         if (sentryConfig.proxy.enable) {
