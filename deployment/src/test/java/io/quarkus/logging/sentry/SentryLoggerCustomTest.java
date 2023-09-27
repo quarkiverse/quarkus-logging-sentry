@@ -32,5 +32,6 @@ public class SentryLoggerCustomTest {
         assertThat(sentryHandler).extracting("minimumEventLevel").isEqualTo(Level.INFO);
         assertThat(sentryHandler).extracting("minimumBreadcrumbLevel").isEqualTo(Level.DEBUG);
         assertThat(Sentry.isEnabled()).isTrue();
+        assertThat(options.getContextTags()).containsExactlyInAnyOrder("tag1", "tag2");
     }
 }

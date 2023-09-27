@@ -120,5 +120,13 @@ public class SentryConfig {
     @ConfigItem()
     public OptionalDouble tracesSampleRate;
 
+    /**
+     * Context Tags
+     *
+     * Specifics the MDC tags that are used as Sentry tags
+     */
+    @ConfigItem
+    public Optional<List<String>> contextTags;
+
     public SentryProxyConfig proxy;
 }
