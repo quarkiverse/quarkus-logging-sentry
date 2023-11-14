@@ -67,6 +67,18 @@ public class SentryConfig {
     public Optional<List<String>> inAppPackages;
 
     /**
+     * Sentry differentiates stack frames that are directly related to your application (“in application”) from stack frames
+     * that come from other packages such as the standard library, frameworks, or other dependencies. The difference is visible
+     * in the Sentry web interface where only the “in application” frames are displayed by default.
+     *
+     * You can configure which package prefixes your application uses with this option.
+     *
+     * You can configure which package prefixes you want to exclude from logging.
+     */
+    @ConfigItem
+    public Optional<List<String>> inAppExcludedPackages;
+
+    /**
      * Environment
      *
      * With Sentry you can easily filter issues, releases, and user feedback by environment.
