@@ -56,6 +56,12 @@ public class SentryHandlerValueFactory {
                 inAppPackages.forEach(options::addInAppInclude);
             }
         }
+
+        if (sentryConfig.inAppExcludedPackages.isPresent()) {
+            List<String> inAppExcludedPackages = sentryConfig.inAppExcludedPackages.get();
+            inAppExcludedPackages.forEach(options::addInAppExclude);
+        }
+
         options.setDsn(sentryConfig.dsn.get());
         sentryConfig.environment.ifPresent(options::setEnvironment);
         sentryConfig.release.ifPresent(options::setRelease);
