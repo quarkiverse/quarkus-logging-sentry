@@ -109,6 +109,38 @@ endif::add-copy-button-to-env-var[]
 |
 
 
+a| [[quarkus-logging-sentry_quarkus.log.sentry.in-app-excluded-packages]]`link:#quarkus-logging-sentry_quarkus.log.sentry.in-app-excluded-packages[quarkus.log.sentry.in-app-excluded-packages]`
+
+[.description]
+--
+Sentry differentiates stack frames that are directly related to your application (“in application”) from stack frames that come from other packages such as the standard library, frameworks, or other dependencies. The difference is visible in the Sentry web interface where only the “in application” frames are displayed by default. You can configure which package prefixes your application uses with this option. You can configure which package prefixes you want to exclude from logging.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_IN_APP_EXCLUDED_PACKAGES+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_IN_APP_EXCLUDED_PACKAGES+++`
+endif::add-copy-button-to-env-var[]
+--|list of string 
+|
+
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.ignored-exceptions-for-type]]`link:#quarkus-logging-sentry_quarkus.log.sentry.ignored-exceptions-for-type[quarkus.log.sentry.ignored-exceptions-for-type]`
+
+[.description]
+--
+You can use this option to set exceptions that will be filtered out before sending to Sentry by adding the names of the exception.(e.g. java.lang.RuntimeException)
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_IGNORED_EXCEPTIONS_FOR_TYPE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_IGNORED_EXCEPTIONS_FOR_TYPE+++`
+endif::add-copy-button-to-env-var[]
+--|list of string 
+|
+
+
 a| [[quarkus-logging-sentry_quarkus.log.sentry.environment]]`link:#quarkus-logging-sentry_quarkus.log.sentry.environment[quarkus.log.sentry.environment]`
 
 [.description]

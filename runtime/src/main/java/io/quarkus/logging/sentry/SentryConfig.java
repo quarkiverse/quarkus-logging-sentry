@@ -79,6 +79,15 @@ public class SentryConfig {
     public Optional<List<String>> inAppExcludedPackages;
 
     /**
+     *
+     * You can use this option to set exceptions that will be filtered out before sending to Sentry
+     * by adding the names of the exception.(e.g. java.lang.RuntimeException)
+     *
+     */
+    @ConfigItem
+    public Optional<List<String>> ignoredExceptionsForType;
+
+    /**
      * Environment
      *
      * With Sentry you can easily filter issues, releases, and user feedback by environment.

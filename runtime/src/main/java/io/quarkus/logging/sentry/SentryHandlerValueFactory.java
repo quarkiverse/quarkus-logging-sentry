@@ -62,6 +62,20 @@ public class SentryHandlerValueFactory {
             inAppExcludedPackages.forEach(options::addInAppExclude);
         }
 
+        if (sentryConfig.ignoredExceptionsForType.isPresent()) {
+            List<String> ignoredExceptionsForType = sentryConfig.ignoredExceptionsForType.get();
+            ignoredExceptionsForType.forEach(exceptionTypeName -> {
+                try {
+                    Class<? extends Throwable> exceptionClass = Class.forName(exceptionTypeName).asSubclass(Throwable.class);
+                    options.addIgnoredExceptionForType(exceptionClass);
+                } catch (ClassNotFoundException e) {
+                    LOG.error(String.format(
+                            "Exception type not found for the given name: %s, in 'quarkus.log.sentry.ignored-exceptions-for-type'",
+                            exceptionTypeName), e);
+                }
+            });
+        }
+
         options.setDsn(sentryConfig.dsn.get());
         sentryConfig.environment.ifPresent(options::setEnvironment);
         sentryConfig.release.ifPresent(options::setRelease);
