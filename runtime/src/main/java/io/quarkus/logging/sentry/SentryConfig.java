@@ -1,6 +1,7 @@
 package io.quarkus.logging.sentry;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.logging.Level;
@@ -148,6 +149,14 @@ public class SentryConfig {
      */
     @ConfigItem
     public Optional<List<String>> contextTags;
+
+    /**
+     * Static tags
+     *
+     * Static tags that are sent to Sentry with every event.
+     */
+    @ConfigItem
+    public Map<String, String> tags;
 
     public SentryProxyConfig proxy;
 }

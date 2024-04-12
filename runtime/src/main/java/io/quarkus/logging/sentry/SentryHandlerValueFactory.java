@@ -82,6 +82,7 @@ public class SentryHandlerValueFactory {
         sentryConfig.serverName.ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
         sentryConfig.contextTags.ifPresent(contextTags -> contextTags.forEach(options::addContextTag));
+        sentryConfig.tags.forEach(options::setTag);
 
         final Instance<SentryOptions.BeforeSendCallback> select = CDI.current().select(SentryOptions.BeforeSendCallback.class);
         if (!select.isUnsatisfied()) {
