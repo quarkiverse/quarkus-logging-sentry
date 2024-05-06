@@ -316,4 +316,20 @@ endif::add-copy-button-to-env-var[]
 --|string 
 |
 
+
+a| [[quarkus-logging-sentry_quarkus.log.sentry.tags-tags]]`link:#quarkus-logging-sentry_quarkus.log.sentry.tags-tags[quarkus.log.sentry.tags]`
+
+[.description]
+--
+Static tags Static tags that are sent to Sentry with every event.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_TAGS+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_TAGS+++`
+endif::add-copy-button-to-env-var[]
+--|`Map<String,String>` 
+|
+
 |===
