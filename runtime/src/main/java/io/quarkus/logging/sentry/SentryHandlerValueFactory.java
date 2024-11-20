@@ -25,7 +25,7 @@ public class SentryHandlerValueFactory {
 
     public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
 
-        if (!config.enable) {
+        if (!config.enabled.orElse(config.enable)) {
             return new RuntimeValue<>(Optional.empty());
         }
 

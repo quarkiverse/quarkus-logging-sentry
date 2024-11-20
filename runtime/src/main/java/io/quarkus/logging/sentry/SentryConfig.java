@@ -23,6 +23,12 @@ public class SentryConfig {
     boolean enable;
 
     /**
+     * Determine whether to enable the Sentry logging extension.
+     */
+    @ConfigItem
+    public Optional<Boolean> enabled;
+
+    /**
      * Sentry DSN
      *
      * The DSN is the first and most important thing to configure because it tells the SDK where to send events. You can find
