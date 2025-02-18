@@ -89,6 +89,15 @@ public class SentryConfig {
     public Optional<List<String>> ignoredExceptionsForType;
 
     /**
+     *
+     * You can use this option to filter out errors whose message matches a certain pattern before sending to Sentry.
+     *
+     */
+
+    @ConfigItem
+    public Optional<List<String>> ignoredErrors;
+
+    /**
      * Environment
      *
      * With Sentry you can easily filter issues, releases, and user feedback by environment.

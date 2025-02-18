@@ -76,6 +76,8 @@ public class SentryHandlerValueFactory {
             });
         }
 
+        sentryConfig.ignoredErrors.ifPresent(options::setIgnoredErrors);
+
         options.setDsn(sentryConfig.dsn.get());
         sentryConfig.environment.ifPresent(options::setEnvironment);
         sentryConfig.release.ifPresent(options::setRelease);
