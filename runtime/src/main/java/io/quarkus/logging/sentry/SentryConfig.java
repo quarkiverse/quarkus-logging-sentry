@@ -93,7 +93,6 @@ public class SentryConfig {
      * You can use this option to filter out errors whose message matches a certain pattern before sending to Sentry.
      *
      */
-
     @ConfigItem
     public Optional<List<String>> ignoredErrors;
 
