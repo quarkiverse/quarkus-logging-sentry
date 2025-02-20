@@ -78,6 +78,15 @@
         "infra",
         "ideas"
       ]
+    },
+    {
+      "login": "dalbani",
+      "name": "Damiano Albani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1470270?v=4",
+      "profile": "https://github.com/dalbani",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
