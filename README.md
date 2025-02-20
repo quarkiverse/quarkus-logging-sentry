@@ -1,9 +1,21 @@
+<div align="center">
+
+<img src="https://github.com/quarkiverse/.github/blob/main/assets/images/quarkus.svg" width="67" height="70" ><img src="https://github.com/quarkiverse/.github/blob/main/assets/images/plus-sign.svg" height="70" ><img src="https://github.com/quarkiverse/quarkus-logging-sentry/blob/main/docs/modules/ROOT/assets/images/sentry.svg" height="70" >
+
 # Quarkus - Logging Sentry
+</div>
+<br>
+
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+
+[![Build](https://github.com/quarkiverse/quarkus-moneta/workflows/Build/badge.svg)](https://github.com/quarkiverse/quarkus-moneta/actions?query=workflow%3ABuild)
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?logo=apache-maven&style=flat-square)](https://search.maven.org/artifact/io.quarkiverse.loggingsentry/quarkus-logging-sentry)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+
 
 ## Introduction
 
