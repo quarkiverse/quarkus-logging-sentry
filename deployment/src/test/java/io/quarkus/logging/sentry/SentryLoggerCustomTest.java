@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import io.quarkus.test.QuarkusUnitTest;
-import io.sentry.HubAdapter;
+import io.sentry.ScopesAdapter;
 import io.sentry.Sentry;
 import io.sentry.SentryOptions;
 
@@ -24,7 +24,7 @@ public class SentryLoggerCustomTest {
     @Test
     public void sentryLoggerCustomTest() {
         final Handler sentryHandler = getSentryHandler();
-        final SentryOptions options = HubAdapter.getInstance().getOptions();
+        final SentryOptions options = ScopesAdapter.getInstance().getOptions();
         assertThat(sentryHandler).isNotNull();
         assertThat(sentryHandler.getLevel()).isEqualTo(org.jboss.logmanager.Level.TRACE);
         assertThat(options.getInAppIncludes()).contains("io.quarkus.logging.sentry").contains("org.test");

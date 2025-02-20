@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 import io.quarkus.test.QuarkusUnitTest;
-import io.sentry.HubAdapter;
+import io.sentry.ScopesAdapter;
 import io.sentry.Sentry;
 import io.sentry.SentryOptions;
 
@@ -23,7 +23,7 @@ public class SentryLoggerReleaseOptionTests {
     @Test
     public void sentryLoggerEnvironmentOptionTest() {
         final Handler sentryHandler = getSentryHandler();
-        final SentryOptions options = HubAdapter.getInstance().getOptions();
+        final SentryOptions options = ScopesAdapter.getInstance().getOptions();
         assertThat(sentryHandler).isNotNull();
         assertThat(options.getRelease()).isEqualTo("releaseABC");
         assertThat(Sentry.isEnabled()).isTrue();

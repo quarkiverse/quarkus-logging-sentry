@@ -22,6 +22,7 @@ public class SentryBeforeSendCallbacksHandler implements BiFunction<SentryEvent,
     public SentryEvent apply(SentryEvent sentryEvent, Hint hint) {
         if (sentryEvent != null) {
             for (BeforeSendCallback callback : callbacks) {
+                assert sentryEvent != null;
                 sentryEvent = callback.execute(sentryEvent, hint);
             }
         }

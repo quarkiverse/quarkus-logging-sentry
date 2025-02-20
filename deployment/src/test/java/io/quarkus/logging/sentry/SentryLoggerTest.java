@@ -14,7 +14,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import io.quarkus.bootstrap.logging.InitialConfigurator;
 import io.quarkus.bootstrap.logging.QuarkusDelayedHandler;
 import io.quarkus.test.QuarkusUnitTest;
-import io.sentry.HubAdapter;
+import io.sentry.ScopesAdapter;
 import io.sentry.Sentry;
 import io.sentry.SentryOptions;
 import io.sentry.jul.SentryHandler;
@@ -29,7 +29,7 @@ public class SentryLoggerTest {
     @Test
     public void sentryLoggerDefaultTest() {
         final Handler sentryHandler = getSentryHandler();
-        final SentryOptions options = HubAdapter.getInstance().getOptions();
+        final SentryOptions options = ScopesAdapter.getInstance().getOptions();
         assertThat(sentryHandler).isNotNull();
         assertThat(options.getInAppIncludes()).isEmpty();
         assertThat(options.getDsn()).isEqualTo("https://123@default.com/22222");
@@ -45,10 +45,9 @@ public class SentryLoggerTest {
         assertThat(Logger.getLogger("").getHandlers()).contains(delayedHandler);
         assertThat(delayedHandler.getLevel()).isEqualTo(Level.ALL);
 
-        Handler handler = Arrays.stream(delayedHandler.getHandlers())
+        return Arrays.stream(delayedHandler.getHandlers())
                 .filter(h -> SentryHandler.class.getName().equals(h.getClass().getName()))
                 .findFirst().orElse(null);
-        return handler;
     }
 
 }
