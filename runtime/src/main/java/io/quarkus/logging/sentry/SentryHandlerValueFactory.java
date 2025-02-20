@@ -80,6 +80,7 @@ public class SentryHandlerValueFactory {
         options.setDsn(sentryConfig.dsn().get());
         sentryConfig.environment().ifPresent(options::setEnvironment);
         sentryConfig.release().ifPresent(options::setRelease);
+        sentryConfig.ignoredErrors().ifPresent(options::setIgnoredErrors);
         sentryConfig.serverName().ifPresent(options::setServerName);
         sentryConfig.tracesSampleRate().ifPresent(options::setTracesSampleRate);
         sentryConfig.contextTags().ifPresent(contextTags -> contextTags.forEach(options::addContextTag));
