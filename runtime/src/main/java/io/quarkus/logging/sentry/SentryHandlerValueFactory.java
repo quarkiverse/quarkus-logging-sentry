@@ -37,17 +37,18 @@ public class SentryHandlerValueFactory {
         handler.setPrintfStyle(true);
         handler.setMinimumEventLevel(config.minimumEventLevel() != null ? config.minimumEventLevel() : config.level());
         handler.setMinimumBreadcrumbLevel(config.minimumBreadcrumbLevel());
+        LOG.infof("Sentry connected to: %s", config.dsn().orElse("?"));
         return new RuntimeValue<>(Optional.of(handler));
     }
 
     public static SentryOptions toSentryOptions(SentryConfig sentryConfig) {
-        if (!sentryConfig.dsn().isPresent()) {
+        if (sentryConfig.dsn().isEmpty()) {
             throw new ConfigurationException(
                     "Configuration key \"quarkus.log.sentry.dsn\" is required when Sentry is enabled, but its value is empty/missing");
         }
         final SentryOptions options = new SentryOptions();
 
-        if (!sentryConfig.inAppPackages().isPresent()) {
+        if (sentryConfig.inAppPackages().isEmpty()) {
             LOG.warn(
                     "No 'quarkus.log.sentry.in-app-packages' was configured, this option is highly recommended as it affects stacktrace grouping and display on Sentry. See https://quarkus.io/guides/logging-sentry#in-app-packages");
         } else {
@@ -94,7 +95,7 @@ public class SentryHandlerValueFactory {
             if (sentryConfig.proxy().host().filter(not(String::isBlank)).isPresent()) {
                 LOG.trace("Proxy is enabled for Sentry's outgoing requests");
                 options.setProxy(new SentryOptions.Proxy(
-                        sentryConfig.proxy().host().get(),
+                        sentryConfig.proxy().host().orElseThrow(),
                         sentryConfig.proxy().port().map(String::valueOf).orElse(null),
                         sentryConfig.proxy().username().orElse(null),
                         sentryConfig.proxy().password().orElse(null)));

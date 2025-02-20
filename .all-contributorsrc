@@ -14,6 +14,70 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "gsmet",
+      "name": "Guillaume Smet",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1279749?v=4",
+      "profile": "https://lesincroyableslivres.fr/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "melloware",
+      "name": "Melloware",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4399574?v=4",
+      "profile": "https://melloware.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "looorent",
+      "name": "Lorent Lempereur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8242900?v=4",
+      "profile": "https://github.com/looorent",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "janfreymann",
+      "name": "janfreymann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5231877?v=4",
+      "profile": "https://github.com/janfreymann",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "HerrDerb",
+      "name": "HerrDerb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7398256?v=4",
+      "profile": "https://github.com/HerrDerb",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "NickBeginner",
+      "name": "Nick",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83872101?v=4",
+      "profile": "https://github.com/NickBeginner",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "gastaldi",
+      "name": "George Gastaldi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54133?v=4",
+      "profile": "https://github.com/gastaldi",
+      "contributions": [
+        "infra",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -21,5 +85,7 @@
   "projectOwner": "quarkiverse",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
