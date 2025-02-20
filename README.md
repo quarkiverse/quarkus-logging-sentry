@@ -8,7 +8,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -42,8 +42,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://melloware.com"><img src="https://avatars.githubusercontent.com/u/4399574?v=4?s=100" width="100px;" alt="Melloware"/><br /><sub><b>Melloware</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=melloware" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/looorent"><img src="https://avatars.githubusercontent.com/u/8242900?v=4?s=100" width="100px;" alt="Lorent Lempereur"/><br /><sub><b>Lorent Lempereur</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=looorent" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/janfreymann"><img src="https://avatars.githubusercontent.com/u/5231877?v=4?s=100" width="100px;" alt="janfreymann"/><br /><sub><b>janfreymann</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=janfreymann" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/NickBeginner"><img src="https://avatars.githubusercontent.com/u/83872101?v=4?s=100" width="100px;" alt="Nick"/><br /><sub><b>Nick</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=NickBeginner" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/HerrDerb"><img src="https://avatars.githubusercontent.com/u/7398256?v=4?s=100" width="100px;" alt="HerrDerb"/><br /><sub><b>HerrDerb</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=HerrDerb" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/NickBeginner"><img src="https://avatars.githubusercontent.com/u/83872101?v=4?s=100" width="100px;" alt="Nick"/><br /><sub><b>Nick</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=NickBeginner" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/gastaldi"><img src="https://avatars.githubusercontent.com/u/54133?v=4?s=100" width="100px;" alt="George Gastaldi"/><br /><sub><b>George Gastaldi</b></sub></a><br /><a href="#infra-gastaldi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-gastaldi" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
