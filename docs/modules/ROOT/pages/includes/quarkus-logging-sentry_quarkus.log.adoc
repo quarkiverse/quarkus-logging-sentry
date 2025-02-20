@@ -8,7 +8,7 @@ h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a| [[quarkus-logging-sentry_quarkus-log-sentry]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry[`quarkus.log.sentry`]##
+a| [[quarkus-logging-sentry_quarkus-log-sentry-enabled]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-enabled[`quarkus.log.sentry.enabled`]##
 
 [.description]
 --
@@ -16,10 +16,10 @@ Determine whether to enable the Sentry logging extension.
 
 
 ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY+++[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_ENABLED+++[]
 endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++QUARKUS_LOG_SENTRY+++`
+Environment variable: `+++QUARKUS_LOG_SENTRY_ENABLED+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
@@ -263,7 +263,7 @@ endif::add-copy-button-to-env-var[]
 |Map<String,String>
 |
 
-a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy[`quarkus.log.sentry.proxy`]##
+a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-enabled]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-enabled[`quarkus.log.sentry.proxy.enabled`]##
 
 [.description]
 --
@@ -271,10 +271,10 @@ Determine whether to enable a Proxy for all Sentry outbound requests. This is al
 
 
 ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY+++[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++[]
 endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY+++`
+Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
