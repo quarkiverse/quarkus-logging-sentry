@@ -27,6 +27,17 @@ It enables the use of Sentry in native executables and provide configuration pro
 
 The documentation for this extension can be found [here](https://quarkiverse.github.io/quarkiverse-docs/quarkus-logging-sentry/dev/index.html).
 
+## Versioning
+
+There are multiple versions available please check which one for your Quarkus release version.
+
+| Extension Version | Quarkus Version |
+| --- | --- |
+| ![1.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=1.&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-2.0+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/2.16.6.Final) |
+| ![2.0.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.0&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.15+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.15.0) |
+| ![2.1.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.16+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.19.0) |
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
