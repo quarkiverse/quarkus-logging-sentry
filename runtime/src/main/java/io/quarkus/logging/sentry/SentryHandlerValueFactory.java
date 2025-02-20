@@ -25,7 +25,7 @@ public class SentryHandlerValueFactory {
 
     public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
 
-        if (!config.enable) {
+        if (!config.enable().orElse(config.enabled())) {
             return new RuntimeValue<>(Optional.empty());
         }
 
@@ -33,37 +33,37 @@ public class SentryHandlerValueFactory {
         final SentryOptions options = toSentryOptions(config);
         Sentry.init(options);
         SentryHandler handler = new SentryHandler(options);
-        handler.setLevel(config.level);
+        handler.setLevel(config.level());
         handler.setPrintfStyle(true);
-        handler.setMinimumEventLevel(config.minimumEventLevel != null ? config.minimumEventLevel : config.level);
-        handler.setMinimumBreadcrumbLevel(config.minimumBreadcrumbLevel);
+        handler.setMinimumEventLevel(config.minimumEventLevel() != null ? config.minimumEventLevel() : config.level());
+        handler.setMinimumBreadcrumbLevel(config.minimumBreadcrumbLevel());
         return new RuntimeValue<>(Optional.of(handler));
     }
 
     public static SentryOptions toSentryOptions(SentryConfig sentryConfig) {
-        if (!sentryConfig.dsn.isPresent()) {
+        if (!sentryConfig.dsn().isPresent()) {
             throw new ConfigurationException(
                     "Configuration key \"quarkus.log.sentry.dsn\" is required when Sentry is enabled, but its value is empty/missing");
         }
         final SentryOptions options = new SentryOptions();
 
-        if (!sentryConfig.inAppPackages.isPresent()) {
+        if (!sentryConfig.inAppPackages().isPresent()) {
             LOG.warn(
                     "No 'quarkus.log.sentry.in-app-packages' was configured, this option is highly recommended as it affects stacktrace grouping and display on Sentry. See https://quarkus.io/guides/logging-sentry#in-app-packages");
         } else {
-            List<String> inAppPackages = sentryConfig.inAppPackages.get();
+            List<String> inAppPackages = sentryConfig.inAppPackages().get();
             if (inAppPackages.size() != 1 || !Objects.equals(inAppPackages.get(0), "*")) {
                 inAppPackages.forEach(options::addInAppInclude);
             }
         }
 
-        if (sentryConfig.inAppExcludedPackages.isPresent()) {
-            List<String> inAppExcludedPackages = sentryConfig.inAppExcludedPackages.get();
+        if (sentryConfig.inAppExcludedPackages().isPresent()) {
+            List<String> inAppExcludedPackages = sentryConfig.inAppExcludedPackages().get();
             inAppExcludedPackages.forEach(options::addInAppExclude);
         }
 
-        if (sentryConfig.ignoredExceptionsForType.isPresent()) {
-            List<String> ignoredExceptionsForType = sentryConfig.ignoredExceptionsForType.get();
+        if (sentryConfig.ignoredExceptionsForType().isPresent()) {
+            List<String> ignoredExceptionsForType = sentryConfig.ignoredExceptionsForType().get();
             ignoredExceptionsForType.forEach(exceptionTypeName -> {
                 try {
                     Class<? extends Throwable> exceptionClass = Class.forName(exceptionTypeName).asSubclass(Throwable.class);
@@ -76,14 +76,14 @@ public class SentryHandlerValueFactory {
             });
         }
 
-        options.setDsn(sentryConfig.dsn.get());
-        sentryConfig.environment.ifPresent(options::setEnvironment);
-        sentryConfig.release.ifPresent(options::setRelease);
-        sentryConfig.ignoredErrors.ifPresent(options::setIgnoredErrors);
-        sentryConfig.serverName.ifPresent(options::setServerName);
-        sentryConfig.tracesSampleRate.ifPresent(options::setTracesSampleRate);
-        sentryConfig.contextTags.ifPresent(contextTags -> contextTags.forEach(options::addContextTag));
-        sentryConfig.tags.forEach(options::setTag);
+        options.setDsn(sentryConfig.dsn().get());
+        sentryConfig.environment().ifPresent(options::setEnvironment);
+        sentryConfig.release().ifPresent(options::setRelease);
+        sentryConfig.ignoredErrors().ifPresent(options::setIgnoredErrors);
+        sentryConfig.serverName().ifPresent(options::setServerName);
+        sentryConfig.tracesSampleRate().ifPresent(options::setTracesSampleRate);
+        sentryConfig.contextTags().ifPresent(contextTags -> contextTags.forEach(options::addContextTag));
+        sentryConfig.tags().forEach(options::setTag);
 
         final Instance<SentryOptions.BeforeSendCallback> select = CDI.current().select(SentryOptions.BeforeSendCallback.class);
         if (!select.isUnsatisfied()) {
@@ -91,20 +91,20 @@ public class SentryHandlerValueFactory {
             options.setBeforeSend(handler::apply);
         }
 
-        if (sentryConfig.proxy.enable) {
-            if (sentryConfig.proxy.host.filter(not(String::isBlank)).isPresent()) {
+        if (sentryConfig.proxy().enable().orElse(sentryConfig.proxy().enabled())) {
+            if (sentryConfig.proxy().host().filter(not(String::isBlank)).isPresent()) {
                 LOG.trace("Proxy is enabled for Sentry's outgoing requests");
                 options.setProxy(new SentryOptions.Proxy(
-                        sentryConfig.proxy.host.get(),
-                        sentryConfig.proxy.port.map(String::valueOf).orElse(null),
-                        sentryConfig.proxy.username.orElse(null),
-                        sentryConfig.proxy.password.orElse(null)));
+                        sentryConfig.proxy().host().get(),
+                        sentryConfig.proxy().port().map(String::valueOf).orElse(null),
+                        sentryConfig.proxy().username().orElse(null),
+                        sentryConfig.proxy().password().orElse(null)));
             } else {
                 LOG.warn("Proxy is enabled for Sentry but no host is provided. Ignoring Proxy configuration.");
             }
         }
 
-        options.setDebug(sentryConfig.debug);
+        options.setDebug(sentryConfig.debug());
         return options;
     }
 }

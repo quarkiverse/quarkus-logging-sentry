@@ -6,21 +6,33 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.logging.Level;
 
-import io.quarkus.runtime.annotations.ConfigItem;
 import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
+import io.smallrye.config.ConfigMapping;
+import io.smallrye.config.WithDefault;
+import io.smallrye.config.WithParentName;
 
 /**
  * Configuration for Sentry logging.
  */
-@ConfigRoot(phase = ConfigPhase.RUN_TIME, name = "log.sentry")
-public class SentryConfig {
+@ConfigRoot(phase = ConfigPhase.RUN_TIME)
+@ConfigMapping(prefix = "quarkus.log.sentry")
+public interface SentryConfig {
+
+    /**
+     * Determine whether to enable the Sentry logging extension.
+     *
+     * @deprecated we try to stay away from this pattern now, replace with {@code quarkus.log.sentry.enabled}.
+     */
+    @Deprecated(forRemoval = true)
+    @WithParentName
+    Optional<Boolean> enable();
 
     /**
      * Determine whether to enable the Sentry logging extension.
      */
-    @ConfigItem(name = ConfigItem.PARENT)
-    boolean enable;
+    @WithDefault("false")
+    boolean enabled();
 
     /**
      * Sentry DSN
@@ -28,22 +40,21 @@ public class SentryConfig {
      * The DSN is the first and most important thing to configure because it tells the SDK where to send events. You can find
      * your project’s DSN in the “Client Keys” section of your “Project Settings” in Sentry.
      */
-    @ConfigItem
-    public Optional<String> dsn;
+    Optional<String> dsn();
 
     /**
      * The sentry log level.
      */
-    @ConfigItem(defaultValue = "WARN")
-    public Level level;
+    @WithDefault("WARN")
+    Level level();
 
     /**
      * The minimum event level.
      *
      * Every log statement that is greater than minimum event level is turned into Sentry event.
      */
-    @ConfigItem(defaultValue = "WARN")
-    public Level minimumEventLevel;
+    @WithDefault("WARN")
+    Level minimumEventLevel();
 
     /**
      * The minimum breadcrumb level.
@@ -51,8 +62,8 @@ public class SentryConfig {
      * Every log statement that is greater than minimum breadcrumb level is added to Sentry scope as a breadcrumb,
      * which can be later attached to SentryEvent if one is triggered.
      */
-    @ConfigItem(defaultValue = "INFO")
-    public Level minimumBreadcrumbLevel;
+    @WithDefault("INFO")
+    Level minimumBreadcrumbLevel();
 
     /**
      * Sentry differentiates stack frames that are directly related to your application (“in application”) from stack frames
@@ -64,8 +75,7 @@ public class SentryConfig {
      * This option is highly recommended as it affects stacktrace grouping and display on Sentry. See documentation:
      * https://quarkus.io/guides/logging-sentry#in-app-packages
      */
-    @ConfigItem
-    public Optional<List<String>> inAppPackages;
+    Optional<List<String>> inAppPackages();
 
     /**
      * Sentry differentiates stack frames that are directly related to your application (“in application”) from stack frames
@@ -76,8 +86,7 @@ public class SentryConfig {
      *
      * You can configure which package prefixes you want to exclude from logging.
      */
-    @ConfigItem
-    public Optional<List<String>> inAppExcludedPackages;
+    Optional<List<String>> inAppExcludedPackages();
 
     /**
      *
@@ -85,16 +94,14 @@ public class SentryConfig {
      * by adding the names of the exception.(e.g. java.lang.RuntimeException)
      *
      */
-    @ConfigItem
-    public Optional<List<String>> ignoredExceptionsForType;
+    Optional<List<String>> ignoredExceptionsForType();
 
     /**
      *
      * You can use this option to filter out errors whose message matches a certain pattern before sending to Sentry.
      *
      */
-    @ConfigItem
-    public Optional<List<String>> ignoredErrors;
+    Optional<List<String>> ignoredErrors();
 
     /**
      * Environment
@@ -108,8 +115,7 @@ public class SentryConfig {
      * -> the environment name cannot contain newlines or spaces, cannot be the string “None” or exceed 64 characters.
      *
      */
-    @ConfigItem
-    public Optional<String> environment;
+    Optional<String> environment();
 
     /**
      * Release
@@ -122,24 +128,22 @@ public class SentryConfig {
      * - Receive email notifications when your code gets deployed
      *
      */
-    @ConfigItem
-    public Optional<String> release;
+    Optional<String> release();
 
     /**
      * Server name
      *
      * Sets the server name that will be sent with each event.
      */
-    @ConfigItem
-    public Optional<String> serverName;
+    Optional<String> serverName();
 
     /**
      * Debug
      *
      * Enables Sentry debug mode.
      */
-    @ConfigItem(defaultValue = "false")
-    public boolean debug;
+    @WithDefault("false")
+    boolean debug();
 
     /**
      * This should be a float/double between 0.0 and 1.0 (inclusive) and represents the percentage chance that any given
@@ -147,24 +151,21 @@ public class SentryConfig {
      * So, barring outside influence, 0.0 is a 0% chance (none will be sent) and 1.0 is a 100% chance (all will be sent). This
      * rate applies equally to all transactions.
      */
-    @ConfigItem()
-    public OptionalDouble tracesSampleRate;
+    OptionalDouble tracesSampleRate();
 
     /**
      * Context Tags
      *
      * Specifics the MDC tags that are used as Sentry tags
      */
-    @ConfigItem
-    public Optional<List<String>> contextTags;
+    Optional<List<String>> contextTags();
 
     /**
      * Static tags
      *
      * Static tags that are sent to Sentry with every event.
      */
-    @ConfigItem
-    public Map<String, String> tags;
+    Map<String, String> tags();
 
-    public SentryProxyConfig proxy;
+    SentryProxyConfig proxy();
 }
