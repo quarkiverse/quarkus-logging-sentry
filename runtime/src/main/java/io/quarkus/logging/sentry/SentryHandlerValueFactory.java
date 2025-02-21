@@ -2,6 +2,8 @@ package io.quarkus.logging.sentry;
 
 import static java.util.function.Predicate.not;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,7 +17,6 @@ import org.jboss.logging.Logger;
 import io.quarkus.runtime.RuntimeValue;
 import io.quarkus.runtime.annotations.Recorder;
 import io.quarkus.runtime.configuration.ConfigurationException;
-import io.sentry.Sentry;
 import io.sentry.SentryOptions;
 import io.sentry.jul.SentryHandler;
 
@@ -31,10 +32,14 @@ public class SentryHandlerValueFactory {
 
         // Init Sentry
         final SentryOptions options = toSentryOptions(config);
-        Sentry.init(options);
         SentryHandler handler = new SentryHandler(options);
         handler.setLevel(config.level());
         handler.setPrintfStyle(true);
+        try {
+            handler.setEncoding(StandardCharsets.UTF_8.name());
+        } catch (UnsupportedEncodingException e) {
+            LOG.warn("Could not set encoding for Sentry handler", e);
+        }
         handler.setMinimumEventLevel(config.minimumEventLevel() != null ? config.minimumEventLevel() : config.level());
         handler.setMinimumBreadcrumbLevel(config.minimumBreadcrumbLevel());
         LOG.infof("Sentry connected to: %s", config.dsn().orElse("?"));
