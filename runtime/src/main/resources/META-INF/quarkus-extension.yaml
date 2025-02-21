@@ -8,7 +8,7 @@ metadata:
   - "cloud"
   categories:
   - "logging"
-  icon-url: "https://github.com/quarkiverse/quarkus-logging-sentry/blob/main/docs/modules/ROOT/assets/images/sentry.svg"
+  icon-url: "https://raw.githubusercontent.com/quarkiverse/quarkus-logging-sentry/refs/heads/main/docs/modules/ROOT/assets/images/sentry.svg"
   guide: https://quarkiverse.github.io/quarkiverse-docs/quarkus-logging-sentry/dev/index.html
   config:
   - "quarkus.log.sentry."
