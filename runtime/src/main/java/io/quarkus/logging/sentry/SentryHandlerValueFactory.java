@@ -32,7 +32,8 @@ public class SentryHandlerValueFactory {
 
         // Init Sentry
         final SentryOptions options = toSentryOptions(config);
-        SentryHandler handler = new SentryHandler(options);
+        final boolean enableExternalConfiguration = false; // https://github.com/getsentry/sentry-java/pull/4208
+        SentryHandler handler = new SentryHandler(options, enableExternalConfiguration);
         handler.setLevel(config.level());
         handler.setPrintfStyle(true);
         try {
