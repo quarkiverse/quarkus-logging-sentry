@@ -10,7 +10,6 @@ import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
 import io.smallrye.config.ConfigMapping;
 import io.smallrye.config.WithDefault;
-import io.smallrye.config.WithParentName;
 
 /**
  * Configuration for Sentry logging.
@@ -18,15 +17,6 @@ import io.smallrye.config.WithParentName;
 @ConfigRoot(phase = ConfigPhase.RUN_TIME)
 @ConfigMapping(prefix = "quarkus.log.sentry")
 public interface SentryConfig {
-
-    /**
-     * Determine whether to enable the Sentry logging extension.
-     *
-     * @deprecated we try to stay away from this pattern now, replace with {@code quarkus.log.sentry.enabled}.
-     */
-    @Deprecated(forRemoval = true)
-    @WithParentName
-    Optional<Boolean> enable();
 
     /**
      * Determine whether to enable the Sentry logging extension.
