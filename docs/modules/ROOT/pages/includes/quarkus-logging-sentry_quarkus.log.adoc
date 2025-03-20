@@ -1,4 +1,3 @@
-:summaryTableId: quarkus-logging-sentry_quarkus-log
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -9,6 +8,10 @@ h|Type
 h|Default
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-enabled]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-enabled[`quarkus.log.sentry.enabled`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.enabled+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -26,6 +29,10 @@ endif::add-copy-button-to-env-var[]
 |`false`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-dsn]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-dsn[`quarkus.log.sentry.dsn`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.dsn+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -45,6 +52,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-level]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-level[`quarkus.log.sentry.level`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.level+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -62,6 +73,10 @@ endif::add-copy-button-to-env-var[]
 |`WARN`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-minimum-event-level]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-minimum-event-level[`quarkus.log.sentry.minimum-event-level`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.minimum-event-level+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -81,6 +96,10 @@ endif::add-copy-button-to-env-var[]
 |`WARN`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-minimum-breadcrumb-level]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-minimum-breadcrumb-level[`quarkus.log.sentry.minimum-breadcrumb-level`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.minimum-breadcrumb-level+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -100,6 +119,10 @@ endif::add-copy-button-to-env-var[]
 |`INFO`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-in-app-packages]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-in-app-packages[`quarkus.log.sentry.in-app-packages`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.in-app-packages+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -121,6 +144,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-in-app-excluded-packages]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-in-app-excluded-packages[`quarkus.log.sentry.in-app-excluded-packages`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.in-app-excluded-packages+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -142,6 +169,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-ignored-exceptions-for-type]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-ignored-exceptions-for-type[`quarkus.log.sentry.ignored-exceptions-for-type`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.ignored-exceptions-for-type+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -159,6 +190,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-ignored-errors]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-ignored-errors[`quarkus.log.sentry.ignored-errors`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.ignored-errors+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -176,6 +211,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-environment]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-environment[`quarkus.log.sentry.environment`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.environment+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -197,6 +236,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-release]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-release[`quarkus.log.sentry.release`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.release+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -216,6 +259,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-server-name]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-server-name[`quarkus.log.sentry.server-name`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.server-name+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -235,6 +282,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-debug]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-debug[`quarkus.log.sentry.debug`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.debug+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -254,6 +305,10 @@ endif::add-copy-button-to-env-var[]
 |`false`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-traces-sample-rate]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-traces-sample-rate[`quarkus.log.sentry.traces-sample-rate`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.traces-sample-rate+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -271,6 +326,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-context-tags]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-context-tags[`quarkus.log.sentry.context-tags`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.context-tags+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -290,6 +349,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-tags-tags]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-tags-tags[`quarkus.log.sentry.tags."tags"`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.tags."tags"+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -309,6 +372,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-enabled]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-enabled[`quarkus.log.sentry.proxy.enabled`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.proxy.enabled+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -326,6 +393,10 @@ endif::add-copy-button-to-env-var[]
 |`false`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-host]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-host[`quarkus.log.sentry.proxy.host`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.proxy.host+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -343,6 +414,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-port]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-port[`quarkus.log.sentry.proxy.port`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.proxy.port+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -360,6 +435,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-username]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-username[`quarkus.log.sentry.proxy.username`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.proxy.username+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -377,6 +456,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-password]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-password[`quarkus.log.sentry.proxy.password`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.proxy.password+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -395,5 +478,3 @@ endif::add-copy-button-to-env-var[]
 
 |===
 
-
-:!summaryTableId:

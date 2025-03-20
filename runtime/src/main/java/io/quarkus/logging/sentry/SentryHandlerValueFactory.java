@@ -26,7 +26,7 @@ public class SentryHandlerValueFactory {
 
     public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
 
-        if (!config.enable().orElse(config.enabled())) {
+        if (!config.enabled()) {
             return new RuntimeValue<>(Optional.empty());
         }
 
@@ -98,7 +98,7 @@ public class SentryHandlerValueFactory {
             options.setBeforeSend(handler::apply);
         }
 
-        if (sentryConfig.proxy().enable().orElse(sentryConfig.proxy().enabled())) {
+        if (sentryConfig.proxy().enabled()) {
             if (sentryConfig.proxy().host().filter(not(String::isBlank)).isPresent()) {
                 LOG.trace("Proxy is enabled for Sentry's outgoing requests");
                 options.setProxy(new SentryOptions.Proxy(

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse.loggingsentry</groupId>
@@ -9,7 +11,7 @@
     </parent>
 
     <artifactId>quarkus-logging-sentry-docs</artifactId>
-    <name>Quarkus - Logging - Sentry - Documentation</name>
+    <name>Quarkus Logging Sentry - Documentation</name>
 
     <dependencies>
         <!-- Make sure the doc is built after the other artifacts -->
@@ -21,7 +23,19 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>modules/ROOT/examples</sourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>it.ozimov</groupId>
                 <artifactId>yaml-properties-maven-plugin</artifactId>
@@ -91,4 +105,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
