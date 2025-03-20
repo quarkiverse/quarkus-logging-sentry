@@ -12,5 +12,6 @@ updates:
     ignore:
       - dependency-name: "io.quarkus:quarkus-bom"
       - dependency-name: "io.quarkus:quarkus-maven-plugin"
+      - dependency-name: "io.quarkus:quarkus-config-doc-maven-plugin"
       - dependency-name: "io.quarkus:quarkus-extension-processor"
       - dependency-name: "io.quarkus:quarkus-extension-maven-plugin"
