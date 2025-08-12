@@ -24,8 +24,14 @@ import io.sentry.jul.SentryHandler;
 public class SentryHandlerValueFactory {
     private static final Logger LOG = Logger.getLogger(SentryHandlerValueFactory.class);
 
-    public RuntimeValue<Optional<Handler>> create(final SentryConfig config) {
+    private final RuntimeValue<SentryConfig> sentryConfig;
 
+    public SentryHandlerValueFactory(RuntimeValue<SentryConfig> sentryConfig) {
+        this.sentryConfig = sentryConfig;
+    }
+
+    public RuntimeValue<Optional<Handler>> create() {
+        final SentryConfig config = sentryConfig.getValue();
         if (!config.enabled()) {
             return new RuntimeValue<>(Optional.empty());
         }
