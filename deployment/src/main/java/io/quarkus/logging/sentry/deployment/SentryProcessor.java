@@ -7,7 +7,6 @@ import io.quarkus.deployment.builditem.ExtensionSslNativeSupportBuildItem;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
 import io.quarkus.deployment.builditem.LogHandlerBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
-import io.quarkus.logging.sentry.SentryConfig;
 import io.quarkus.logging.sentry.SentryHandlerValueFactory;
 import io.sentry.Breadcrumb;
 import io.sentry.SentryBaseEvent;
@@ -29,9 +28,8 @@ class SentryProcessor {
 
     @BuildStep
     @Record(ExecutionTime.RUNTIME_INIT)
-    LogHandlerBuildItem addSentryLogHandler(final SentryConfig sentryConfig,
-            final SentryHandlerValueFactory sentryHandlerValueFactory) {
-        return new LogHandlerBuildItem(sentryHandlerValueFactory.create(sentryConfig));
+    LogHandlerBuildItem addSentryLogHandler(final SentryHandlerValueFactory sentryHandlerValueFactory) {
+        return new LogHandlerBuildItem(sentryHandlerValueFactory.create());
     }
 
     @BuildStep
