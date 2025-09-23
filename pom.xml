@@ -28,7 +28,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<quarkus.version>3.21.0</quarkus.version>
 		<sentry.version>8.22.0</sentry.version>
-		<assertj.version>3.27.5</assertj.version>
+		<assertj.version>3.27.6</assertj.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
