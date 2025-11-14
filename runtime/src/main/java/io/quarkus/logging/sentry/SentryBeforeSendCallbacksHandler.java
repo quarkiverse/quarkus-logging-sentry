@@ -20,12 +20,20 @@ public class SentryBeforeSendCallbacksHandler implements BiFunction<SentryEvent,
 
     @Override
     public SentryEvent apply(SentryEvent sentryEvent, Hint hint) {
-        if (sentryEvent != null) {
-            for (BeforeSendCallback callback : callbacks) {
-                assert sentryEvent != null;
-                sentryEvent = callback.execute(sentryEvent, hint);
+        if (sentryEvent == null) {
+            return null;
+        }
+
+        for (BeforeSendCallback callback : callbacks) {
+            sentryEvent = callback.execute(sentryEvent, hint);
+
+            // If a callback returns null, the event should be dropped
+            if (sentryEvent == null) {
+                break;
             }
         }
+
         return sentryEvent;
     }
+
 }
