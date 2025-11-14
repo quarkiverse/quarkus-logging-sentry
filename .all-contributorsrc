@@ -96,6 +96,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "lfielke",
+      "name": "Luke Fielke",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6062998?v=4",
+      "profile": "https://github.com/lfielke",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

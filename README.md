@@ -11,7 +11,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -63,6 +63,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/gastaldi"><img src="https://avatars.githubusercontent.com/u/54133?v=4?s=100" width="100px;" alt="George Gastaldi"/><br /><sub><b>George Gastaldi</b></sub></a><br /><a href="#infra-gastaldi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-gastaldi" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/dalbani"><img src="https://avatars.githubusercontent.com/u/1470270?v=4?s=100" width="100px;" alt="Damiano Albani"/><br /><sub><b>Damiano Albani</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/commits?author=dalbani" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lfgcampos"><img src="https://avatars.githubusercontent.com/u/8443274?v=4?s=100" width="100px;" alt="Lucas Campos"/><br /><sub><b>Lucas Campos</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/issues?q=author%3Alfgcampos" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lfielke"><img src="https://avatars.githubusercontent.com/u/6062998?v=4?s=100" width="100px;" alt="Luke Fielke"/><br /><sub><b>Luke Fielke</b></sub></a><br /><a href="https://github.com/quarkiverse/quarkus-logging-sentry/issues?q=author%3Alfielke" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
