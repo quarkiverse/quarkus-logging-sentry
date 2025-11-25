@@ -26,7 +26,7 @@
 		<maven.compiler.release>17</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<quarkus.version>3.21.0</quarkus.version>
+		<quarkus.version>3.27.1</quarkus.version>
 		<sentry.version>8.27.1</sentry.version>
 		<assertj.version>3.27.6</assertj.version>
 	</properties>
