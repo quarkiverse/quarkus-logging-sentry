@@ -10,5 +10,6 @@ metadata:
   - "logging"
   icon-url: "https://raw.githubusercontent.com/quarkiverse/quarkus-logging-sentry/refs/heads/main/docs/modules/ROOT/assets/images/sentry.svg"
   guide: https://quarkiverse.github.io/quarkiverse-docs/quarkus-logging-sentry/dev/index.html
+  lib-ga: io.sentry:sentry-jul[https://sentry.io/]
   config:
   - "quarkus.log.sentry."

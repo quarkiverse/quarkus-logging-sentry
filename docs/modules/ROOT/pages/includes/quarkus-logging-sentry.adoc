@@ -26,7 +26,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_ENABLED+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`false`
+|`+++false+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-dsn]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-dsn[`quarkus.log.sentry.dsn`]##
 ifdef::add-copy-button-to-config-props[]
@@ -70,7 +70,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_LEVEL+++`
 endif::add-copy-button-to-env-var[]
 --
 |link:https://javadoc.io/doc/org.jboss.logmanager/jboss-logmanager/latest/org/jboss/logmanager/Level.html[Level]
-|`WARN`
+|`+++WARN+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-minimum-event-level]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-minimum-event-level[`quarkus.log.sentry.minimum-event-level`]##
 ifdef::add-copy-button-to-config-props[]
@@ -93,7 +93,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_MINIMUM_EVENT_LEVEL+++`
 endif::add-copy-button-to-env-var[]
 --
 |link:https://javadoc.io/doc/org.jboss.logmanager/jboss-logmanager/latest/org/jboss/logmanager/Level.html[Level]
-|`WARN`
+|`+++WARN+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-minimum-breadcrumb-level]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-minimum-breadcrumb-level[`quarkus.log.sentry.minimum-breadcrumb-level`]##
 ifdef::add-copy-button-to-config-props[]
@@ -116,7 +116,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_MINIMUM_BREADCRUMB_LEVEL+++`
 endif::add-copy-button-to-env-var[]
 --
 |link:https://javadoc.io/doc/org.jboss.logmanager/jboss-logmanager/latest/org/jboss/logmanager/Level.html[Level]
-|`INFO`
+|`+++INFO+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-in-app-packages]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-in-app-packages[`quarkus.log.sentry.in-app-packages`]##
 ifdef::add-copy-button-to-config-props[]
@@ -302,7 +302,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_DEBUG+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`false`
+|`+++false+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-traces-sample-rate]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-traces-sample-rate[`quarkus.log.sentry.traces-sample-rate`]##
 ifdef::add-copy-button-to-config-props[]
@@ -390,7 +390,7 @@ Environment variable: `+++QUARKUS_LOG_SENTRY_PROXY_ENABLED+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`false`
+|`+++false+++`
 
 a| [[quarkus-logging-sentry_quarkus-log-sentry-proxy-host]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-proxy-host[`quarkus.log.sentry.proxy.host`]##
 ifdef::add-copy-button-to-config-props[]
