@@ -39,7 +39,8 @@ There are multiple versions available please check which one for your Quarkus re
 | ![1.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=1.&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-2.0+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/2.16.6.Final) |
 | ![2.0.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.0&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.8+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.8.0) |
 | ![2.1.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.1&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.15+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.15.0) |
-| ![2.2.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.20+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.20.0) |
+| ![2.2.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.2&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.20+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.20.0) |
+| ![2.3.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.27+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.27.0) |
 
 
 ## Contributors ✨
