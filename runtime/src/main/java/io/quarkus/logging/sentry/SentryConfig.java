@@ -25,6 +25,13 @@ public interface SentryConfig {
     boolean enabled();
 
     /**
+     * Determine whether to enable the Sentry detailed structured logging, linked to errors and traces, for debugging and investigation.
+     * Structured logs allow you to send, view and query logs and parameters sent from your applications within Sentry.
+     */
+    @WithDefault("false")
+    boolean logEnabled();
+
+    /**
      * Sentry DSN
      * <p>
      * The DSN is the first and most important thing to configure because it tells the SDK where to send events. You can find
