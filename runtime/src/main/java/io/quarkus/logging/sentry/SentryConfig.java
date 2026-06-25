@@ -25,7 +25,8 @@ public interface SentryConfig {
     boolean enabled();
 
     /**
-     * Determine whether to enable the Sentry detailed structured logging, linked to errors and traces, for debugging and investigation.
+     * Determine whether to enable the Sentry detailed structured logging, linked to errors and traces, for debugging and
+     * investigation.
      * Structured logs allow you to send, view and query logs and parameters sent from your applications within Sentry.
      */
     @WithDefault("false")
