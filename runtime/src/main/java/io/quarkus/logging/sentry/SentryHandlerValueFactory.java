@@ -90,6 +90,7 @@ public class SentryHandlerValueFactory {
         }
 
         options.setDsn(sentryConfig.dsn().get());
+        options.getLogs().setEnabled(sentryConfig.logEnabled());
         sentryConfig.environment().ifPresent(options::setEnvironment);
         sentryConfig.release().ifPresent(options::setRelease);
         sentryConfig.ignoredErrors().ifPresent(options::setIgnoredErrors);
