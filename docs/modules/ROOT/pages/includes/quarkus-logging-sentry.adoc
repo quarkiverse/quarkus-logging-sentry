@@ -28,6 +28,27 @@ endif::add-copy-button-to-env-var[]
 |boolean
 |`+++false+++`
 
+a| [[quarkus-logging-sentry_quarkus-log-sentry-log-enabled]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-log-enabled[`quarkus.log.sentry.log-enabled`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.log.sentry.log-enabled+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+Determine whether to enable the Sentry detailed structured logging, linked to errors and traces, for debugging and investigation. Structured logs allow you to send, view and query logs and parameters sent from your applications within Sentry.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_LOG_SENTRY_LOG_ENABLED+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_LOG_SENTRY_LOG_ENABLED+++`
+endif::add-copy-button-to-env-var[]
+--
+|boolean
+|`+++false+++`
+
 a| [[quarkus-logging-sentry_quarkus-log-sentry-dsn]] [.property-path]##link:#quarkus-logging-sentry_quarkus-log-sentry-dsn[`quarkus.log.sentry.dsn`]##
 ifdef::add-copy-button-to-config-props[]
 config_property_copy_button:+++quarkus.log.sentry.dsn+++[]
