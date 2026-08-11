@@ -20,6 +20,10 @@
             <groupId>io.sentry</groupId>
             <artifactId>sentry-jul</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
