@@ -13,7 +13,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 
 import io.quarkus.bootstrap.logging.InitialConfigurator;
 import io.quarkus.bootstrap.logging.QuarkusDelayedHandler;
-import io.quarkus.test.QuarkusUnitTest;
+import io.quarkus.test.QuarkusExtensionTest;
 import io.sentry.ScopesAdapter;
 import io.sentry.Sentry;
 import io.sentry.SentryOptions;
@@ -22,7 +22,7 @@ import io.sentry.jul.SentryHandler;
 public class SentryLoggerTest {
 
     @RegisterExtension
-    static final QuarkusUnitTest config = new QuarkusUnitTest()
+    static final QuarkusExtensionTest config = new QuarkusExtensionTest()
             .setAllowTestClassOutsideDeployment(true)
             .withConfigurationResource("application-sentry-logger-default.properties");
 

@@ -40,7 +40,10 @@ There are multiple versions available please check which one for your Quarkus re
 | ![2.0.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.0&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.8+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.8.0) |
 | ![2.1.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.1&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.15+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.15.0) |
 | ![2.2.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.2&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.20+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.20.0) |
-| ![2.3.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.27+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.27.0) |
+| ![2.3.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=2.3&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-3.27+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/3.27.0) |
+| ![3.x](https://img.shields.io/maven-central/v/io.quarkiverse.loggingsentry/quarkus-logging-sentry?versionPrefix=3.&color=cyan) | [![Quarkus](https://img.shields.io/badge/Quarkus-4.0+-purple.svg)](https://github.com/quarkusio/quarkus/releases/tag/4.0.0.Beta1) |
+
+3.x targets Quarkus 4 and requires JDK 21. If you are still on Quarkus 3, stay on 2.3.x, which is maintained from the `2.x` branch.
 
 
 ## Contributors ✨
