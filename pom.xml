@@ -23,7 +23,7 @@
   </scm>
 	<properties>
 		<quarkus.version>4.0.0.Beta1</quarkus.version>
-		<sentry.version>8.61.0</sentry.version>
+		<sentry.version>8.61.1</sentry.version>
 		<assertj.version>3.27.7</assertj.version>
 	</properties>
 	<dependencyManagement>
